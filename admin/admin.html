@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Admin - Merapi Polnes</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .popup-error {
+      position: fixed;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f44336;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 999;
+      font-size: 14px;
+      animation: fadeInOut 3.5s ease forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translate(-50%, -10px); }
+      10% { opacity: 1; transform: translate(-50%, 0); }
+      90% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -10px); }
+    }
+  </style>
+</head>
+<body class="login-page admin-page">
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="../member/member.html">Member Login</a>
+    <a href="admin.html">Admin Login</a>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar-container" id="navbarContainer">
+    <div class="navbar">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <h3 class="brand">MERAPI POLNES</h3>
+    </div>
+  </div>
+
+  <!-- Login Box -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Admin Login</h2>
+      <form action="proses_login_admin.php" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Popup Error -->
+  <div id="popup" class="popup-error" style="display: none;"></div>
+
+  <!-- Script Sidebar dan Popup -->
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      const navbarContainer = document.getElementById('navbarContainer');
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      navbarContainer.classList.toggle('shifted');
+    }
+
+    function closeMenu() {
+      document.getElementById('sidebar').classList.remove('active');
+      document.getElementById('overlay').classList.remove('active');
+      document.getElementById('navbarContainer').classList.remove('shifted');
+    }
+
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // Tampilkan popup jika ada parameter error di URL
+    const params = new URLSearchParams(window.location.search);
+    const error = params.get('error');
+    const popup = document.getElementById('popup');
+
+    if (error) {
+      if (error === 'username') {
+        popup.textContent = "Username tidak ditemukan.";
+      } else if (error === 'password') {
+        popup.textContent = "Password salah.";
+      } else {
+        popup.textContent = "Terjadi kesalahan.";
+      }
+
+      popup.style.display = 'block';
+
+      setTimeout(() => {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }, 3500);
+    }
+  </script>
+
+</body>
+</html>
