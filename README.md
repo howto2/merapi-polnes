@@ -6,8 +6,6 @@ Website profil MERAPI POLNES (Mahasiswa Teknologi Informasi Pencinta Alam Indone
 ## ✨ Fitur Utama
 
 - **Profil Organisasi:** Menampilkan pengenalan dan identitas MERAPI POLNES.
-- **Visi dan Misi:** Menyajikan tujuan serta arah organisasi.
-- **Informasi Divisi:** Memperkenalkan divisi Lingkungan Hidup, Rock Climbing, dan Search and Rescue (SAR).
 - **Informasi Berita dan Kegiatan:** Menyediakan bagian informasi berita serta dokumentasi kegiatan organisasi.
 - **Akses Anggota dan Admin:** Menyediakan halaman login untuk anggota dan admin.
 - **Pengelolaan Data:** Menggunakan PHP dan database MySQL untuk mendukung fungsi website yang terhubung dengan data.
