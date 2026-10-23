@@ -1,7 +1,7 @@
 "# merapi-polnes" 
 # MERAPI POLNES
 
-Website profil MERAPI POLNES (Mahasiswa Teknologi Informasi Pencinta Alam Indonesia), sebuah wadah mahasiswa di Jurusan Teknologi Informasi, Politeknik Negeri Samarinda. Website ini dikembangkan sebagai media informasi organisasi untuk memperkenalkan identitas, visi dan misi, divisi, serta informasi kegiatan kepada pengunjung.
+Website profil MERAPI POLNES (Mahasiswa Teknologi Informasi Pencinta Alam Indonesia), sebuah wadah mahasiswa di Jurusan Teknologi Informasi, Politeknik Negeri Samarinda. Website ini dikembangkan sebagai media informasi untuk memperkenalkan identitas, visi dan misi, divisi, serta informasi kegiatan kepada pengunjung.
 
 ## ✨ Fitur Utama
 
